@@ -100,8 +100,8 @@
                                     </div>
                                 </div>
 
-                                <infinite-loading @infinite="scroll" style="margin-bottom: 1.5rem;"> <div slot="no-more"></div> <div slot="no-results"></div> </infinite-loading>
-                            </div>
+<!--                                 <infinite-loading @infinite="scroll" style="margin-bottom: 1.5rem;"> <div slot="no-more"></div> <div slot="no-results"></div> </infinite-loading>
+ -->                            </div>
                         </div>
                     </div>
                     <div class="media-library__manager__content__info" v-if="toggles.file && openFile">
@@ -179,7 +179,7 @@
     import Loader from './Loader.vue';
     import SvgError from './svgs/Error.vue';
     import SvgMedia from './svgs/Media.vue';
-    import debounce from 'lodash';
+    import debounce from 'lodash.debounce'
     import axios from 'axios';
 
     import { reactive } from 'vue';

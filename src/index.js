@@ -3,8 +3,6 @@ import merge from 'lodash/merge';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-library.add(fas);
-
 import Manager from './components/Manager.vue';
 import Field from './components/Field.vue';
 import './styles.scss';
@@ -14,16 +12,13 @@ let defaults = {
 };
 
 export default {
-    install(Vue, opts) {
-        Vue.component('app-icon', FontAwesomeIcon);
-        Vue.component('vue-medialibrary-manager', Manager);
-        Vue.component('vue-medialibrary-field', Field);
-
+    install: (app, opts) => {
+        app.component('app-icon', FontAwesomeIcon);
+        app.component('vue-medialibrary-manager', Manager);
+        app.component('vue-medialibrary-field', Field);
 
         const options = merge(defaults, opts);
 
-        Vue.prototype.$medialibrary = options;
-    },
+        app.config.globalProperties.$medialibrary = options;
+    }
 };
-
-export { Manager, Field };

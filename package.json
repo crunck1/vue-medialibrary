@@ -24,7 +24,12 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-
+    "@fortawesome/fontawesome-svg-core",
+    "@fortawesome/free-solid-svg-icons",
+    "@fortawesome/vue-fontawesome",
+    "axios",
+    "vue-infinite-loading",
+    "vue-toasted"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

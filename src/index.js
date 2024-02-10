@@ -1,4 +1,3 @@
-import Toasted from 'vue-toasted';
 import merge from 'lodash/merge';
 /* Icons */
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -6,8 +5,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 library.add(fas);
 
-import Manager from './components/Manager';
-import Field from './components/Field';
+import Manager from './components/Manager.vue';
+import Field from './components/Field.vue';
 import './styles.scss';
 
 let defaults = {
@@ -20,7 +19,6 @@ export default {
         Vue.component('vue-medialibrary-manager', Manager);
         Vue.component('vue-medialibrary-field', Field);
 
-        Vue.use(Toasted);
 
         const options = merge(defaults, opts);
 

@@ -176,13 +176,13 @@
 </template>
 
 <script>
-    import Vue from 'vue';
-    import Loader from './Loader';
-    import SvgError from './svgs/Error';
-    import SvgMedia from './svgs/Media';
-    import InfiniteLoading from 'vue-infinite-loading';
-    import debounce from 'lodash/debounce';
+    import Loader from './Loader.vue';
+    import SvgError from './svgs/Error.vue';
+    import SvgMedia from './svgs/Media.vue';
+    import debounce from 'lodash';
     import axios from 'axios';
+
+    import { reactive } from 'vue';
         
     export default {
         name: 'app-medialibrary-manager',
@@ -191,7 +191,6 @@
             'app-medialibrary-loader': Loader,
             'app-svg-error': SvgError,
             'app-svg-media': SvgMedia,
-            'infinite-loading': InfiniteLoading
         },
 
         props: {
@@ -372,7 +371,12 @@
                         if (data.media.length > 0) {
                             data.media.forEach(item => {
                                 this.store[type].data.push(item);
-                                Vue.set(this.store[type].selectedModel, item.id, false);
+
+// Assuming this.store is already defined and initialized
+// and you want to add a property to this.store[type].selectedModel
+this.store[type].selectedModel = reactive({ ...this.store[type].selectedModel, [item.id]: false });
+
+                               // Vue.set(this.store[type].selectedModel, item.id, false);
                             });
 
                             this.store[type].total = data.total;

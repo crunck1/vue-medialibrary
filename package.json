@@ -24,12 +24,13 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core",
-    "@fortawesome/free-solid-svg-icons",
-    "@fortawesome/vue-fontawesome",
-    "axios",
-    "vue-infinite-loading",
-    "vue-toasted"
+     "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
+    "@fortawesome/vue-fontawesome": "^3.0.0-4",
+    "axios": "^0.24.0",
+    "vue": "^3.2.26",
+    "vue-infinite-loading": "^2.4.5",
+    "vue-toasted": "^1.1.28"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
